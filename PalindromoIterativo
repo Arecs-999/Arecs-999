@@ -1,0 +1,24 @@
+public class PalindromoIterativo {
+
+    public static boolean esPalindromoIterativo(String cadena) {
+        int inicio = 0;
+        int fin = cadena.length() - 1;
+        
+        while (inicio < fin) {
+            if (cadena.charAt(inicio) != cadena.charAt(fin)) {
+                return false;
+            }
+            inicio++;
+            fin--;
+        }
+        
+        return true;
+    }
+
+    public static void main(String[] args) {
+        String cadena = "DABALEARROZALAZORRAELABAD";
+        boolean esPalindromo = esPalindromoIterativo(cadena);
+        
+        System.out.println("La cadena \"" + cadena + "\" es un palíndromo: " + esPalindromo);
+    }
+}
