@@ -1,0 +1,19 @@
+public class SumaNRecursiva {
+
+    public static int sumaRecursiva(int n) {
+        // Caso base: si n es igual a 0, la suma es 0
+        if (n == 0) {
+            return 0;
+        }
+        
+        // Llamada recursiva para sumar los primeros n-1 enteros y luego sumar n
+        return n + sumaRecursiva(n - 1);
+    }
+
+    public static void main(String[] args) {
+        int N = 5;
+        int suma = sumaRecursiva(N);
+        
+        System.out.println("La suma de los primeros " + N + " enteros es: " + suma);
+    }
+}
