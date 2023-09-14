@@ -1,0 +1,24 @@
+public class PalindromoRecursivo {
+
+    public static boolean esPalindromoRecursivo(String cadena) {
+        // Caso base: si la cadena es vacía o tiene un solo carácter, es un palíndromo
+        if (cadena.length() <= 1) {
+            return true;
+        }
+        
+        // Se Comprueba si el primer y último carácter son iguales
+        if (cadena.charAt(0) == cadena.charAt(cadena.length() - 1)) {
+            // Llamada recursiva para comprobar el palíndromo sin el primer y último carácter
+            return esPalindromoRecursivo(cadena.substring(1, cadena.length() - 1));
+        } else {
+            return false;
+        }
+    }
+
+    public static void main(String[] args) {
+        String cadena = "DABALEARROZALAZORRAELABAD";
+        boolean esPalindromo = esPalindromoRecursivo(cadena);
+        
+        System.out.println("La cadena \"" + cadena + "\" es un palíndromo: " + esPalindromo);
+    }
+}
