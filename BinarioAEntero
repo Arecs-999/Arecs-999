@@ -1,0 +1,19 @@
+public class BinarioAEntero {
+
+    public static int binarioAEntero(String binario) {
+        // Caso base: si la cadena binaria está vacía, el entero es 0
+        if (binario.isEmpty()) {
+            return 0;
+        }
+        
+        // Llamada recursiva para convertir el número binario sin el último dígito y luego multiplicarlo por 2 y sumarle el último dígito
+        return binarioAEntero(binario.substring(0, binario.length() - 1)) * 2 + Integer.parseInt(Character.toString(binario.charAt(binario.length() - 1)));
+    }
+
+    public static void main(String[] args) {
+        String binario = "1010";
+        int entero = binarioAEntero(binario);
+        
+        System.out.println("El número entero correspondiente al binario " + binario + " es: " + entero);
+    }
+}
