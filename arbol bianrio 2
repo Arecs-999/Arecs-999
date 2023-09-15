@@ -1,0 +1,79 @@
+class Nodo {
+    int valor;
+    Nodo izquierdo;
+    Nodo derecho;
+
+    public Nodo(int valor) {
+        this.valor = valor;
+        izquierdo = null;
+        derecho = null;
+    }
+}
+
+public class ArbolBinario {
+    Nodo raiz;
+
+    public ArbolBinario() {
+        raiz = null;
+    }
+
+    public void insertar(int valor) {
+        raiz = insertarRec(raiz, valor);
+    }
+
+    private Nodo insertarRec(Nodo nodo, int valor) {
+        if (nodo == null) {
+            nodo = new Nodo(valor);
+            return nodo;
+        }
+
+        if (valor < nodo.valor)
+            nodo.izquierdo = insertarRec(nodo.izquierdo, valor);
+        else if (valor > nodo.valor)
+            nodo.derecho = insertarRec(nodo.derecho, valor);
+
+        return nodo;
+    }
+
+    public void recorridoPreorden(Nodo nodo) {
+        if (nodo != null) {
+            System.out.print(nodo.valor + " ");
+            recorridoPreorden(nodo.izquierdo);
+            recorridoPreorden(nodo.derecho);
+        }
+    }
+
+    public void recorridoInorden(Nodo nodo) {
+        if (nodo != null) {
+            recorridoInorden(nodo.izquierdo);
+            System.out.print(nodo.valor + " ");
+            recorridoInorden(nodo.derecho);
+        }
+    }
+
+    public void recorridoPostorden(Nodo nodo) {
+        if (nodo != null) {
+            recorridoPostorden(nodo.izquierdo);
+            recorridoPostorden(nodo.derecho);
+            System.out.print(nodo.valor + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        ArbolBinario arbol = new ArbolBinario();
+        int[] numeros = {28, 32, 35, 23, 38, 26, 21, 40, 30, 24};
+
+        for (int numero : numeros) {
+            arbol.insertar(numero);
+        }
+
+        System.out.println("Recorrido en preorden:");
+        arbol.recorridoPreorden(arbol.raiz);
+
+        System.out.println("\nRecorrido en inorden:");
+        arbol.recorridoInorden(arbol.raiz);
+
+        System.out.println("\nRecorrido en postorden:");
+        arbol.recorridoPostorden(arbol.raiz);
+    }
+}
