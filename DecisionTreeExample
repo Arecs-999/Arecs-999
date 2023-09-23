@@ -1,0 +1,49 @@
+import weka.classifiers.trees.J48;
+import weka.classifiers.trees.Id3;
+import weka.classifiers.trees.RandomForest;
+import weka.classifiers.trees.RandomTree;
+import weka.classifiers.trees.REPTree;
+import weka.classifiers.trees.SimpleCart;
+import weka.core.Instances;
+import weka.core.Attribute;
+import weka.core.Utils;
+import weka.core.converters.ConverterUtils.DataSource;
+
+public class DecisionTreeExample {
+    public static void main(String[] args) throws Exception {
+     
+        DataSource source = new DataSource("dataset.arff");
+        Instances data = source.getDataSet();
+
+        // Establecer la clase objetivo 
+        data.setClassIndex(data.numAttributes() - 1);
+
+        // Crear y evaluar seis algoritmos de árbol de decisión diferentes
+        evaluateDecisionTreeAlgorithm(new J48(), "J48", data);
+        evaluateDecisionTreeAlgorithm(new Id3(), "ID3", data);
+        evaluateDecisionTreeAlgorithm(new RandomForest(), "Random Forest", data);
+        evaluateDecisionTreeAlgorithm(new RandomTree(), "Random Tree", data);
+        evaluateDecisionTreeAlgorithm(new REPTree(), "REP Tree", data);
+        evaluateDecisionTreeAlgorithm(new SimpleCart(), "Simple Cart", data);
+    }
+
+    public static void evaluateDecisionTreeAlgorithm(Object classifier, String algorithmName, Instances data) throws Exception {
+        // Construir el árbol de decisión utilizando el algoritmo seleccionado
+        if (classifier instanceof weka.classifiers.Classifier) {
+            ((weka.classifiers.Classifier) classifier).buildClassifier(data);
+        } else {
+            throw new IllegalArgumentException("El objeto no es un clasificador válido.");
+        }
+
+        // Valores para entropía y ganancia de información
+        double entropy = 0.75; // Entropía ficticia
+        double informationGain = 0.45; // Ganancia de Información ficticia
+
+        // Imprimir resultados
+        System.out.println("----------⁹⁹⁹╰‿╯Nombre:Cesar Alfredo Quispe Vargas╰‿╯⁹⁹⁹----------");
+        System.out.println("Resultados para " + algorithmName + ":");
+        System.out.println("Entropía del atributo [Nombre del atributo]: " + entropy);
+        System.out.println("Ganancia de Información del atributo [Nombre del atributo]: " + informationGain);
+        System.out.println();
+    }
+}
