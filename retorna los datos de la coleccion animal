@@ -2,10 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-class Program
-{
-    public static void Main(string[] args)
-    {
+class Program {
+    public static void Main(string[] args) {
 
         List<Animal> animales = new List<Animal>();
         animales.Add(new Animal() { Nombre = "Hormiga", Color = "Rojo" });
@@ -18,9 +16,9 @@ class Program
         animales.Add(new Animal() { Nombre = "Camaleon", Color = "Verde" });
         animales.Add(new Animal() { Nombre = "Gallina", Color = "Blanco" });
 
-        var animalesFiltrados = animales.Where(a => a.Color == "Verde" && "AEIOUaeiou".Contains(a.Nombre[0]));
+        var animalesOrdenados = animales.OrderBy(a => a.Nombre);
 
-        foreach (var animal in animalesFiltrados)
+        foreach (var animal in animalesOrdenados)
         {
             Console.WriteLine($"Nombre: {animal.Nombre}, Color: {animal.Color}");
         }
