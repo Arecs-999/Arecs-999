@@ -1,0 +1,45 @@
+--create database DBtienda;
+--drop database DBtienda;
+
+
+use DBtienda;
+
+CREATE TABLE Persona (
+ PersonaID INT IDENTITY(1,1) PRIMARY KEY,
+ Nombre VARCHAR(50) NOT NULL,
+ ApellidoPaterno VARCHAR(25) NOT NULL,
+ ApellidoMaterno VARCHAR(25) NOT NULL,
+ FechaNacimineto DATE,
+ EstadoCivil VARCHAR(10),
+ Correo VARCHAR (50) UNIQUE,
+ Telefono VARCHAR (10),
+ NumeroDoc INT UNIQUE
+);
+
+--para modificar una columna
+--ALTER TABLE Persona ALTER COLUM ApellidoPaterno(50) NOT NULL;
+
+
+CREATE TABLE Usuario(
+ UsuarioID INT,
+ Usuario VARCHAR (50) UNIQUE NOT NULL,
+ Contrasenia VARCHAR (50) NOT NULL,
+ Estado Varchar (10),
+ PersonaID INT NOT NULL UNIQUE,
+ FOREIGN KEY (PersonaID) REFERENCES Persona(PersonaID),
+);
+
+SELECT * FROM Persona;
+
+INSERT INTO Persona (Nombre, ApellidoPaterno, ApellidoMaterno,FechaNacimineto, EstadoCivil, Correo, Telefono, NumeroDoc)
+VALUES
+('Carmen','Lopez','Martinez', '2009-10-26', 'Casada', 'CarmenMartinez@gmail.com','953594568', 78954635);
+
+UPDATE Persona
+SET FechaNacimineto = '1999/02/12'
+
+WHERE PersonaID in (4,6,9);
+
+--para eliminar un dato
+--DELETE FROM Persona;
+--WHERE (id de la persona) =id de la persona ;
