@@ -1,0 +1,19 @@
+CREATE VIEW PersonaUsuarioReporte as
+ SELECT
+	 p.Nombre,
+	 p.ApellidoPaterno,
+	 p.ApellidoMaterno,
+	 p.FechaNacimiento,
+	 p.Direccion,
+	 p.Email,
+	 p.Telefono,
+	 u.Usuario,
+	 u.Contrasenia,
+	 u.FechaRegistro,
+	 u.Estado,
+	 dbo.ObtenerNombreCU(p.PersonaID) as NombreCompleto,
+	 dbo.ObtenerEdadCU(p.PersonaID) as Edad
+FROM Personas p
+INNER JOIN Usuarios u ON p.PersonaID = u.PersonaID
+
+SELECT * FROM PersonaUsuarioReporte;
