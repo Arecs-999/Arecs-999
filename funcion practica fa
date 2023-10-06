@@ -1,0 +1,56 @@
+Select dbo.FuncionPracticaFA(20, 20, 5, 12)
+
+
+
+
+select CONCAT(dbo.ObtenerNombreCU(PersonaID),' ' ,dbo.ObtenerEdadCU(PersonaID), ' Años de Edad') from Personas WHERE PersonaID = 1;
+
+CREATE FUNCTION FuncionPracticaFA
+(
+    @ValorA DECIMAL(18, 2),
+    @ValorB DECIMAL(18, 2),
+    @Tipo INT,
+	@PersonaID INT = 1
+)
+RETURNS NVARCHAR(100)
+AS
+BEGIN
+    DECLARE @Resultado NVARCHAR(100);
+
+    IF @Tipo = 1 -- Suma
+    BEGIN
+        SET @Resultado = CAST(@ValorA + @ValorB AS NVARCHAR(100));
+    END
+    ELSE IF @Tipo = 2 -- Resta
+    BEGIN
+        SET @Resultado = CAST(@ValorA - @ValorB AS NVARCHAR(100));
+    END
+    ELSE IF @Tipo = 3 -- Multiplicación
+    BEGIN
+        SET @Resultado = CAST(@ValorA * @ValorB AS NVARCHAR(100));
+    END
+    ELSE IF @Tipo = 4 -- División
+    BEGIN
+        IF @ValorB = 0
+        BEGIN
+            -- Manejo de división por cero
+            SET @Resultado = NULL;
+        END
+        ELSE
+        BEGIN
+            SET @Resultado = CAST(@ValorA / @ValorB AS NVARCHAR(100));
+        END
+    END
+    --Aqui la Opcion 5
+	ELSE IF @Tipo = 5 -- Aqui la Opcion 5
+    BEGIN
+	 Select @Resultado =  CONCAT(dbo.ObtenerNombreCU(PersonaID),' ' ,dbo.ObtenerEdadCU(PersonaID), ' Años de Edad') from Personas WHERE PersonaID = @PersonaID;
+    END
+    ELSE
+    BEGIN
+        -- Tipo de operación no válida
+        SET @Resultado = NULL;
+    END;
+
+    RETURN @Resultado;
+END;
