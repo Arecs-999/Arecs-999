@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+
+namespace RegistroEmpleadosApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<Empleado> empleados = new List<Empleado>();
+
+            Console.WriteLine("Aplicación de Registro de Empleados");
+
+            while (true)
+            {
+                Console.Write("Ingrese el nombre del empleado (o 'salir' para salir): ");
+                string nombre = Console.ReadLine();
+
+                if (nombre.ToLower() == "salir")
+                {
+                    break;
+                }
+
+                Console.Write("Ingrese el apellido del empleado: ");
+                string apellido = Console.ReadLine();
+
+                empleados.Add(new Empleado(nombre, apellido));
+
+                Console.WriteLine($"Empleado registrado: {nombre} {apellido}");
+            }
+
+            Console.WriteLine("\nLista de Empleados Registrados:");
+            foreach (var empleado in empleados)
+            {
+                Console.WriteLine($"Nombre: {empleado.Nombre}, Apellido: {empleado.Apellido}");
+            }
+
+            Console.WriteLine("Saliendo de la aplicación.");
+        }
+    }
+
+    class Empleado
+    {
+        public string Nombre { get; }
+        public string Apellido { get; }
+
+        public Empleado(string nombre, string apellido)
+        {
+            Nombre = nombre;
+            Apellido = apellido;
+        }
+    }
+}
