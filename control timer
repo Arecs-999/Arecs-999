@@ -1,0 +1,26 @@
+using System;
+using System.Threading;
+
+namespace TimerExample
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Crea un objeto Timer que llamará al método TimerCallback
+            // después de 2000 ms (2 segundos) y luego cada 1000 ms (1 segundo) después de eso.
+            Timer timer = new Timer(TimerCallback, null, 2000, 1000);
+
+            Console.WriteLine("La aplicación está corriendo. Presiona Enter para salir.");
+            Console.ReadLine();
+        }
+
+        private static void TimerCallback(Object o)
+        {
+            // Este método será llamado por el temporizador en un hilo separado.
+            // Puedes realizar la tarea que desees aquí.
+
+            Console.WriteLine("Tarea programada ejecutándose en el hilo " + Thread.CurrentThread.ManagedThreadId);
+        }
+    }
+}
