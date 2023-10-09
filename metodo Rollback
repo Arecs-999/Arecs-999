@@ -1,0 +1,73 @@
+using System;
+using System.Data;
+using System.Data.SqlClient;
+
+namespace TransaccionesDotNet
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string connectionString = "Server=(local);Database=MiBaseDeDatos;User Id=MiUsuario;Password=MiContraseña;";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                // Comienza la transacción
+                SqlTransaction transaction = connection.BeginTransaction();
+
+                try
+                {
+                    // Realiza la transferencia entre cuentas (ejemplo: de la cuenta 1 a la cuenta 2)
+                    int cuentaOrigen = 1;
+                    int cuentaDestino = 2;
+                    decimal montoTransferencia = 500.00m;
+
+                    // Verifica el saldo de la cuenta de origen
+                    decimal saldoOrigen = ObtenerSaldoCuenta(connection, cuentaOrigen);
+
+                    if (saldoOrigen < montoTransferencia)
+                    {
+                        throw new Exception("Saldo insuficiente para la transferencia.");
+                    }
+
+                    // Realiza la transferencia restando el monto de la cuenta de origen
+                    ActualizarSaldoCuenta(connection, cuentaOrigen, saldoOrigen - montoTransferencia);
+
+                    // Aumenta el saldo de la cuenta de destino
+                    decimal saldoDestino = ObtenerSaldoCuenta(connection, cuentaDestino);
+                    ActualizarSaldoCuenta(connection, cuentaDestino, saldoDestino + montoTransferencia);
+
+                    // Confirma la transacción
+                    transaction.Commit();
+
+                    Console.WriteLine("Transferencia exitosa.");
+                }
+                catch (Exception ex)
+                {
+                    // En caso de error, realiza un rollback para deshacer las operaciones
+                    transaction.Rollback();
+                    Console.WriteLine("Error: " + ex.Message);
+                }
+            }
+        }
+
+        // Método para obtener el saldo de una cuenta
+        static decimal ObtenerSaldoCuenta(SqlConnection connection, int numeroCuenta)
+        {
+            SqlCommand command = new SqlCommand("SELECT Saldo FROM Cuentas WHERE NumeroCuenta = @NumeroCuenta", connection);
+            command.Parameters.AddWithValue("@NumeroCuenta", numeroCuenta);
+            return (decimal)command.ExecuteScalar();
+        }
+
+        // Método para actualizar el saldo de una cuenta
+        static void ActualizarSaldoCuenta(SqlConnection connection, int numeroCuenta, decimal nuevoSaldo)
+        {
+            SqlCommand command = new SqlCommand("UPDATE Cuentas SET Saldo = @NuevoSaldo WHERE NumeroCuenta = @NumeroCuenta", connection);
+            command.Parameters.AddWithValue("@NuevoSaldo", nuevoSaldo);
+            command.Parameters.AddWithValue("@NumeroCuenta", numeroCuenta);
+            command.ExecuteNonQuery();
+        }
+    }
+}
