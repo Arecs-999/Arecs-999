@@ -1,0 +1,84 @@
+USE [TIENDA]
+GO
+/****** Object:  StoredProcedure [dbo].[CrearPersona]    Script Date: 9/10/2023 12:32:07 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[CrearPersona](
+    @Nombre NVARCHAR(100), 
+	@ApellidoPaterno NVARCHAR(100),
+	@ApellidoMaterno NVARCHAR(100),
+	@FechaNacimiento DATE,  --VALIDAR
+	@Email NVARCHAR(255),    --VALIDAR
+	@NumeroDoc NVARCHAR(10)    --VALIDAR
+)
+AS  
+BEGIN
+
+    BEGIN TRY
+	    
+		BEGIN TRANSACTION;
+
+		IF @FechaNacimiento >= GETDATE()
+		BEGIN
+		    
+			THROW  51001,'La fecha de nacimineto Debe ser anterior a la fecha actual', 17;
+		END;
+
+		IF LEN (@NumeroDoc) <> 8
+		BEGIN
+		    THROW 51002,'El número de documento debe tener al menos 8 dígitos', 29;
+		END;
+
+		 IF @Email NOT LIKE '%@%'
+        BEGIN
+            THROW 51003, 'El campo de correo electrónico debe contener un "@"', 41;
+        END;
+		
+		IF RIGHT(@Email, CHARINDEX('@', REVERSE(@Email)) - 1) NOT LIKE '%.com'
+        BEGIN
+            THROW 51004, 'El campo de correo electrónico debe tener un dominio válido en el formato "@dominio.com"', 53;
+        END;
+
+		-- Validación de Nombre
+        IF LEN(@Nombre) < 3
+        BEGIN
+            THROW 51005, 'El campo de Nombre debe tener al menos 3 caracteres', 53;
+        END;
+
+        -- Validación de ApellidoPaterno
+        IF LEN(@ApellidoPaterno) < 3
+        BEGIN
+           THROW 51006, 'El campo de Apellido Paterno debe tener al menos 3 caracteres', 65;
+        END;
+
+        -- Validación de ApellidoMaterno
+        IF LEN(@ApellidoMaterno) < 3
+        BEGIN
+           THROW 51007, 'El campo de Apellido Materno debe tener al menos 3 caracteres', 77;
+        END;
+		-- Validación de Email
+        IF @Email NOT LIKE '[a-zA-Z0-9._]%"."%@"gmail.com"'
+        BEGIN
+           THROW 51008, 'El campo de correo electrónico debe tener el formato "Nombre"."ApellidoMaterno or ApellidoPaterno"@gmail.com', 89;
+        END;
+
+
+		COMMIT;
+	END TRY
+	BEGIN CATCH
+
+	    PRINT 'Ingreso al CATCH';
+		PRINT 'Error Mensage: ' + ERROR_MESSAGE();
+		PRINT 'Error Numero: ' +CAST(ERROR_NUMBER() AS NVARCHAR(10));
+		PRINT 'ERROR STADO: ' +CAST(ERROR_STATE() AS NVARCHAR(10));
+        PRINT '-------------------------------------------------'
+        PRINT 'Alfredo Quispe Vargas'
+        PRINT '-------------------------------------------------'
+	    ROLLBACK;
+
+	END CATCH
+
+
+END;
