@@ -1,0 +1,133 @@
+USE [TIENDA]
+GO
+/****** Object:  StoredProcedure [dbo].[CrearCliente]    Script Date: 11/10/2023 10:54:59 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[CrearCliente](
+    @PersonaID INT,
+	@Mensaje NVARCHAR (200) OUTPUT,
+	@Error INT OUTPUT
+)
+AS 
+BEGIN
+    BEGIN TRY
+	    BEGIN TRANSACTION;
+
+		SET @Mensaje = '';
+		SET @Error = 0;
+
+		DECLARE @FechaNacimiento DATE;
+        DECLARE @ClienteExistente INT;
+        DECLARE @Edad INT;
+        DECLARE @Nombre NVARCHAR(50);
+        DECLARE @ApellidoPaterno NVARCHAR(50);
+        DECLARE @ApellidoMaterno NVARCHAR(50);
+        DECLARE @Direccion NVARCHAR(100);
+        DECLARE @Correo NVARCHAR(100);
+        DECLARE @Estado NVARCHAR(20);
+        DECLARE @FechaRegistro DATE;
+		DECLARE @NumeroDoc NVARCHAR(8);
+
+		SELECT @NumeroDoc = NumeroDoc
+		FROM Personas WHERE PersonaID = @PersonaID;
+
+		SELECT @FechaNacimiento = FechaNacimiento 
+		FROM Personas WHERE PersonaID = @PersonaID;
+
+		SELECT @Nombre = Nombre
+		FROM Personas WHERE PersonaID = @PersonaID;
+
+		SELECT @ClienteExistente = COUNT(*) 
+		FROM Clientes WHERE PersonaID = @PersonaID;
+
+		SELECT @Edad = DATEDIFF(YEAR, @FechaNacimiento, GETDATE());
+
+		SELECT @Nombre = Nombre,
+			   @ApellidoPaterno = ApellidoPaterno,
+			   @ApellidoMaterno = ApellidoMaterno,
+			   @Direccion = Direccion,
+			   @Correo = CONCAT(Nombre, '.', ApellidoPaterno) + '@dominio.com',
+			   @Estado = 'Activo',
+			   @FechaRegistro = GETDATE()
+			   
+		FROM Personas WHERE PersonaID = @PersonaID;
+
+		--validaciones
+
+		IF @ClienteExistente > 0
+		BEGIN
+		    SET @Mensaje = 'El cliente ya está registrado,';
+			SET @Error = 1;
+			THROW 51001,@Mensaje,58; 
+		END;
+
+		IF @Edad < 18
+		BEGIN
+		    SET @Mensaje = 'El cliente debe ser mayor de edad,';
+			SET @Error = 1;
+			THROW 51002,@Mensaje,65; 
+		END;
+
+
+
+		IF @Nombre IS NULL OR @ApellidoPaterno IS NULL OR @ApellidoMaterno IS NULL
+		BEGIN
+		    SET @Mensaje = 'El cliente debe tener nombre, apellido paterno y apellido materno,';
+			SET @Error = 1;
+			THROW 51003,@Mensaje,72; 
+		END;
+
+		IF @Direccion IS NULL
+		BEGIN
+		    SET @Mensaje = 'El cliente debe tener una dirección,';
+			SET @Error = 1;
+			THROW 51004,@Mensaje,79; 
+		END;
+
+		IF @Correo IS NULL OR NOT @Correo LIKE '%@dominio.com'
+		BEGIN
+		    SET @Mensaje = 'El cliente debe tener un correo válido en el formato Nombre.ApellidoPaterno@dominio.com,';
+			SET @Error = 1;
+			THROW 51005,@Mensaje,86; 
+		END;
+
+		IF LEN(@NumeroDoc) <> 8 -- Check document number length
+        BEGIN
+            SET @Mensaje = 'El número de documento debe tener 8 caracteres,';
+            SET @Error = 1;
+            THROW 51006,@Mensaje,93; 
+        END;
+
+		-- Otras validaciones personalizadas
+
+		-- ...
+
+		COMMIT;
+	END TRY
+	BEGIN CATCH
+
+	    PRINT 'Ingreso al CATCH';
+		PRINT 'Error Mensaje: ' + ERROR_MESSAGE();
+		PRINT 'Error Numero: ' +CAST(ERROR_NUMBER() AS NVARCHAR(10));
+		PRINT 'ERROR Linea: ' +CAST(ERROR_STATE() AS NVARCHAR(10));
+		PRINT '-------------------------------------------------';
+		PRINT '              Alfredo Quisep Vargas          ';
+		PRINT '-------------------------------------------------';
+	    ROLLBACK;
+	END CATCH
+END;
+
+--validacion---
+
+DECLARE @PersonaID INT;
+DECLARE @Mensaje NVARCHAR(200);
+DECLARE @Error INT;
+
+SET @PersonaID= 6;
+
+EXEC CrearCliente
+	@PersonaID,
+	@Mensaje OUTPUT,
+	@Error OUTPUT;
