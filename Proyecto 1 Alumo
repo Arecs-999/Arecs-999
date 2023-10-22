@@ -1,0 +1,33 @@
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+public class Alumno
+{
+    public string Nombre { get; set; }
+    public int Nota { get; set; }
+}
+
+public class Program
+{
+    public static void Main()
+    {
+        List<Alumno> alumnos = new List<Alumno>
+        {
+            new Alumno { Nombre = "Juan", Nota = 85 },
+            new Alumno { Nombre = "María", Nota = 95 },
+            new Alumno { Nombre = "Pedro", Nota = 90 },
+            new Alumno { Nombre = "Ana", Nota = 92 }
+        };
+
+        var nombres = from alumno in alumnos
+                      where alumno.Nota > 90
+                      select alumno.Nombre;
+
+        foreach (var nombre in nombres)
+        {
+            Console.WriteLine(nombre);
+        }
+    }
+}
+
