@@ -1,0 +1,88 @@
+db.students.insertMany([
+  { id: 1, name: 'Ryan', gender: 'M' },
+  { id: 2, name: 'Joanna', gender: 'F' }
+]);
+
+db.personas.insertMany([
+  { id: 1, 
+   nombre: 'Alfredo', 
+   apellido: 'Salazar',
+   edad: 20,
+   documento: '71548945',
+   genero: 'M'
+},
+  { id: 2, 
+   nombre: 'Maria', 
+   apellido: 'Gutierrez',
+   edad: 35,
+   documento: '71548945',
+   genero: 'F'
+},
+    { id: 3, 
+   nombre: 'Valeria', 
+   apellido: 'Fernandez',
+   edad: 29,
+   documento: '71548945',
+   genero: 'F',
+   profesion:['Sistemas', 'Programador textil']
+},
+    { id: 4, 
+   nombre: 'Yohan', 
+   apellido: 'Gonzales',
+   edad: 38,
+   documento: '71548945',
+   genero: 'M'
+},
+    { id: 5, 
+   nombre: 'Fernando', 
+   apellido: 'Salazar',
+   edad: 26,
+   documento: '71548945',
+   genero: 'M',
+   profesion:['Estadistica', 'Nutricion Robotica']
+}
+]);
+
+    //db.personas.find({});
+    //db.personas.find({nombre: 'Alfredo'});
+    //db.personas.find({genero: 'M'});
+    //db.personas.find({profesion: 'Sistemas', edad:{$gt:14}});
+/*db.personas.insertOne({
+   id: 6, 
+   nombre: 'Yohan', 
+   apellido: 'Pampañaupa',
+   edad: 38,
+   documento: '71548945',
+   genero: 'M',
+   profesion:['Enfermero', 'Sistemas', 'Software']
+
+});
+//db.personas.find({});
+db.personas.updateOne(
+    {id: 5}, {$set:{apellido:'Douglas',edad:56}}
+);
+//db.personas.find({});
+db.personas.updateMany(
+    {genero: 'F'}, {$set:{genero:'Female'}}
+);
+//db.personas.find({});
+db.personas.updateMany(
+    {genero: 'M'}, {$set:{genero:'Male'}}
+);
+//db.personas.find({});
+
+db.personas.deleteOne({
+    id: 1
+});
+//db.personas.find({});*/
+
+db.personas.deleteMany({
+    genero:'F'
+});
+
+db.personas.find({});
+
+
+
+
+//db.students.find({ gender: 'F' });
