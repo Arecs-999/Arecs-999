@@ -1,0 +1,131 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Xamarin.Forms;
+using MySql.Data.MySqlClient;
+
+namespace LOGIN_BASICO_
+{
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
+
+            string conexion = "server=172.80.15.48;port=3306;uid=root;pwd='';database=actividadesdb;";
+            MySqlConnection conectado = new MySqlConnection(conexion);
+          
+            
+        }
+
+        public object MessageBox { get; }
+
+        private void btnOK_Clicked(object sender, EventArgs e)
+        {
+            string sUsuario = txtUsuario.Text;
+            string sPassword = txtPassword.Text;
+
+            if ((sUsuario == "Matias") && (sPassword == "123456"))
+            {
+                Navigation.PushAsync(new Sistema());
+            }
+            else
+            {
+                DisplayAlert("❌ Alert", "El 😄 Usuario o el Password Son Incorrectos", "✔ OK");
+            }
+
+        }
+    }
+}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LOGIN_BASICO_.Sistema"
+             Title="Pagina Principal de Actividades">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry x:Name="actividadEntry"
+                   Placeholder="Ingrese una actividad"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"
+                   Margin="20"
+                   FontSize="20" />
+            <Button x:Name="agregarButton"
+                    Text="Agregar Actividad"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Margin="20"
+                    FontSize="20"
+                    BackgroundColor="Green"
+                    TextColor="White" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LOGIN_BASICO_.MainPage"
+             Title="Login De Actividades">
+             
+    <StackLayout BackgroundColor="#f5f6fa">
+        
+        <Frame Margin="10"
+               BorderColor="#192a56"
+               CornerRadius="150"
+               HeightRequest="100"
+               WidthRequest="100"
+               IsClippedToBounds="True"
+               HorizontalOptions="Center"
+               VerticalOptions="Center">
+            <Image Source="iconologin.png"
+                   BackgroundColor="#ffffff"
+                   Aspect="AspectFill"
+                   Margin="-8"
+                   HeightRequest="100"
+                   WidthRequest="100" />
+        </Frame>
+        <Entry Placeholder="Usuario"
+               TextColor="#192a56"
+               FontSize="25"
+               HorizontalTextAlignment="Center"
+               Margin="20"
+               x:Name="txtUsuario" />
+        <Entry Placeholder="Password"
+               IsPassword="True"
+               TextColor="#192a56"
+               FontSize="25"
+               HorizontalTextAlignment="Center"
+               Margin="20"
+               x:Name="txtPassword" />
+        <StackLayout Orientation="Vertical"
+                     HeightRequest="120"
+                     BackgroundColor="#f5f6fa"
+                     Padding="10"
+                     Margin="20">
+            <StackLayout Spacing="0"
+                         BackgroundColor="#f5f6fa"
+                         Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Padding="10">
+                <ImageButton BackgroundColor="#f5f6fa"
+                             Source="aceptar.jpg"
+                             HeightRequest="100"
+                             WidthRequest="100"
+                             x:Name="btnOK" 
+                             Clicked="btnOK_Clicked"/>
+                <ImageButton BackgroundColor="#f5f6fa"
+                             Source="no.png"
+                             HeightRequest="100"
+                             WidthRequest="90"
+                             x:Name="btnNO" />
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
+
