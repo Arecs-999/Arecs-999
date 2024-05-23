@@ -1,0 +1,477 @@
+archivo html
+------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILLARY TV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    	
+<header>
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Noticias</a></li>
+            <li><a href="#">Programas</a></li>
+            <li><a href="#">Deportes</a></li>
+            <li><a href="#">Farandulas</a></li>
+            <button onclick="alert('¡Bienvenido a Illary TV!')"> Toca Aqui Mi King XD </button>
+        </ul>
+    </nav>
+</header>
+
+<ul class="redes">
+    <li class="icon facebook">
+        <a href="https://www.facebook.com/TVILLARY" target="_blank">
+          <span class="tooltip">Facebook</span>
+          <span><i class="fab fa-facebook-f"></i></span>
+        </a>
+    </li>
+      
+    <li class="icon twitter">
+        <a href="https://x.com/ILLARY_Tv" target="_blank">
+            <span class="tooltip">Twitter</span>
+            <span><i class="fab fa-twitter"></i></span>
+        </a>
+    </li>
+  
+    <li class="icon instagram">
+        <a href="https://www.instagram.com/illarytv/" target="_blank">
+            <span class="tooltip">Instagram</span>
+            <span><i class="fab fa-instagram"></i></span>
+        </a>
+    </li>
+  
+    <li class="icon tiktok">
+        <a href="https://www.tiktok.com/@illary.tv" target="_blank">
+            <span class="tooltip">Tiktok</span>
+            <span><i class="fab fa-tiktok"></i></span>
+        </a>
+    </li>
+
+    <li class="icon whatsapp">
+        <a href="https://wa.me/51986049900" target="_blank">
+            <span class="tooltip">Whatsapp</span>
+            <span><i class="fab fa-whatsapp"></i></span>
+        </a>
+    </li>
+
+    <li class="icon youtube">
+        <a href="https://www.youtube.com/@illarytv" target="_blank">
+            <span class="tooltip">YouTube</span>
+            <span><i class="fab fa-youtube"></i></span>
+        </a>
+    </li>
+</ul>
+
+<div class="container">
+    <section id="noticias" class="card">
+        <h2>Noticias</h2>
+        <div class="content">
+            <div class="news">
+                <div class="news-item">
+                    <img src="https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/444150077_976973774430208_4661141839846931921_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFz7yk73SxN3HLOtCTLhB0kOp0BMO06vGs6nQEw7Tq8a7bjqw-56XN6Pxjt8cTM-qJk7IRIqmC4sX87ZjL0MoIb&_nc_ohc=MqzVc8AOGiYQ7kNvgGpM1Lx&_nc_ht=scontent.flim14-1.fna&oh=00_AYDmaTRLVoVfq-cQBw5L6wI4YXXqb57qBWswueEofaWmIA&oe=6655A480" alt="Noticia 1">
+                    <p>#Noticias #Puno | La Policía ha iniciado investigaciones en el caso de una presunta agresión ocurrida dentro del fuerte Manco Cápac perteneciente a la IV Brigada de Montaña, donde el pasado 14 de mayo habría sido golpeado con un objeto contundente el sargento de segunda EP, Jhon C.E..
+                        Según información de una fuente policial, las investigaciones apuntan a una agresión física por parte de un teniente del Ejército apellidado Calderón y un cabo.
+                        La víctima se encuentra internado en el servicio de Neurocirugía del Hospital Regional Manuel Núñez Butrón de Puno y su pronóstico es reservado.
+                        Él tendría evidencias de golpes en la columna y la cabeza. Los familiares hasta el momento han preferido no señalar nada a la prensa pero admitieron que el joven estudiante que hacía su servicio militar, sigue delicado de salud.
+                        ☝️😉 #IllaryInforma
+                        
+                        📌𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩 / 𝟵𝟴𝟲 𝟬𝟰𝟵 𝟵𝟬𝟬
+                        𝗝𝗿. 𝗧𝗮𝗰𝗻𝗮 𝟴𝟱𝟴 - 𝗙𝗿𝗲𝗻𝘁𝗲 𝗮 𝗹𝗮 𝗣𝗿𝗲𝗳𝗲𝗰𝘁𝘂𝗿𝗮 / 𝗖𝗼𝘀𝘁𝗮𝗱𝗼 𝗖𝗹𝗶𝗻𝗶𝗰𝗮 𝗞𝗮𝗹𝗮𝘀 - 𝗣𝘂𝗻𝗼.
+                        🤳𝗕𝘂𝘀𝗰𝗮𝗻𝗼𝘀 𝗲𝗻 𝗧𝗜𝗞𝗧𝗢𝗞 𝗰𝗼𝗺𝗼: 𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩</p>
+                </div>
+                <div class="news-item">
+                    <img src="https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/443822377_976979264429659_4644069251156029095_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEj_t84fKD3RntXrO7gFYRqPDpklhYDLHk8OmSWFgMsecRvGI-CidbiWvk6nHzmVOqR_dxFQ7LA1CyErhA2mrje&_nc_ohc=tuzYFYPUef0Q7kNvgFN2Z_6&_nc_ht=scontent.flim14-1.fna&oh=00_AYAEb01RvxMgtSklD0uMc1ED_xK8F09HRE7mb3oNJRMFlw&oe=6655A69D" alt="Noticia 2">
+                    <p>#Noticias #Puno | Henry Ortiz, socio de la Asociación de Taxis y Expresos Señor de los Milagros N° 13, denunció públicamente al presidente de dicha asociación, Jesús Humpiri Choque, quien estaría privando a los socios por las diferentes sanciones que está aplicando.
+
+                        Explicó que, con la finalidad de excluir a varios socios activos, Jesús Humpiri realizó una convocatoria de reunión para el día jueves 9 de mayo, sin embargo, esta citación la realizó a través de una publicación en un diario regional, cuando lo propio debió ser por el grupo de WhatsApp en el que estaban.
+                        
+                        Detalló que, son 19 socios que están siendo perjudicados por la medida que se ha tomado en esa ultima reunión, donde se tenía de agenda la depuración de socios. “La convocatoria ha sido direccionada y personalizada por llamada a algunos socios y los que estamos en contra de su gestión nos ha excluido”, señaló.
+                        
+                        Así mismo, dijo que, al momento de solicitar una copia del acta, el presidente de la asociación no quiso recibir el documento, indicándoles que ya no son socios.
+                        
+                        Finalmente anunció que, procederán legalmente formalizando una denuncia penal, y también por estafa, debido a que tienen compañeros que han pagado una suma de dinero con la promesa de ser incluidos en la asociación, sin embargo, hasta el momento se les ha negado y ahora están siendo excluidos.
+                        ☝️😉 #IllaryInforma
+                        
+                        📌𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩 / 𝟵𝟴𝟲 𝟬𝟰𝟵 𝟵𝟬𝟬
+                        𝗝𝗿. 𝗧𝗮𝗰𝗻𝗮 𝟴𝟱𝟴 - 𝗙𝗿𝗲𝗻𝘁𝗲 𝗮 𝗹𝗮 𝗣𝗿𝗲𝗳𝗲𝗰𝘁𝘂𝗿𝗮 / 𝗖𝗼𝘀𝘁𝗮𝗱𝗼 𝗖𝗹𝗶𝗻𝗶𝗰𝗮 𝗞𝗮𝗹𝗮𝘀 - 𝗣𝘂𝗻𝗼.
+                        🤳𝗕𝘂𝘀𝗰𝗮𝗻𝗼𝘀 𝗲𝗻 𝗧𝗜𝗞𝗧𝗢𝗞 𝗰𝗼𝗺𝗼: 𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩</p>
+                </div>
+                <div class="news-item">
+                    <img src="https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/443822377_976979264429659_4644069251156029095_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEj_t84fKD3RntXrO7gFYRqPDpklhYDLHk8OmSWFgMsecRvGI-CidbiWvk6nHzmVOqR_dxFQ7LA1CyErhA2mrje&_nc_ohc=tuzYFYPUef0Q7kNvgFN2Z_6&_nc_ht=scontent.flim14-1.fna&oh=00_AYAEb01RvxMgtSklD0uMc1ED_xK8F09HRE7mb3oNJRMFlw&oe=6655A69D" alt="Noticia 3">
+                    <p>#Noticias #Puno | Henry Ortiz, socio de la Asociación de Taxis y Expresos Señor de los Milagros N° 13, denunció públicamente al presidente de dicha asociación, Jesús Humpiri Choque, quien estaría privando a los socios por las diferentes sanciones que está aplicando.
+
+                        Explicó que, con la finalidad de excluir a varios socios activos, Jesús Humpiri realizó una convocatoria de reunión para el día jueves 9 de mayo, sin embargo, esta citación la realizó a través de una publicación en un diario regional, cuando lo propio debió ser por el grupo de WhatsApp en el que estaban.
+                        
+                        Detalló que, son 19 socios que están siendo perjudicados por la medida que se ha tomado en esa ultima reunión, donde se tenía de agenda la depuración de socios. “La convocatoria ha sido direccionada y personalizada por llamada a algunos socios y los que estamos en contra de su gestión nos ha excluido”, señaló.
+                        
+                        Así mismo, dijo que, al momento de solicitar una copia del acta, el presidente de la asociación no quiso recibir el documento, indicándoles que ya no son socios.
+                        
+                        Finalmente anunció que, procederán legalmente formalizando una denuncia penal, y también por estafa, debido a que tienen compañeros que han pagado una suma de dinero con la promesa de ser incluidos en la asociación, sin embargo, hasta el momento se les ha negado y ahora están siendo excluidos.
+                        ☝️😉 #IllaryInforma
+                        
+                        📌𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩 / 𝟵𝟴𝟲 𝟬𝟰𝟵 𝟵𝟬𝟬
+                        𝗝𝗿. 𝗧𝗮𝗰𝗻𝗮 𝟴𝟱𝟴 - 𝗙𝗿𝗲𝗻𝘁𝗲 𝗮 𝗹𝗮 𝗣𝗿𝗲𝗳𝗲𝗰𝘁𝘂𝗿𝗮 / 𝗖𝗼𝘀𝘁𝗮𝗱𝗼 𝗖𝗹𝗶𝗻𝗶𝗰𝗮 𝗞𝗮𝗹𝗮𝘀 - 𝗣𝘂𝗻𝗼.
+                        🤳𝗕𝘂𝘀𝗰𝗮𝗻𝗼𝘀 𝗲𝗻 𝗧𝗜𝗞𝗧𝗢𝗞 𝗰𝗼𝗺𝗼: 𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩</p>
+                </div>
+                <div class="news-item">
+                    <img src="https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/443822377_976979264429659_4644069251156029095_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEj_t84fKD3RntXrO7gFYRqPDpklhYDLHk8OmSWFgMsecRvGI-CidbiWvk6nHzmVOqR_dxFQ7LA1CyErhA2mrje&_nc_ohc=tuzYFYPUef0Q7kNvgFN2Z_6&_nc_ht=scontent.flim14-1.fna&oh=00_AYAEb01RvxMgtSklD0uMc1ED_xK8F09HRE7mb3oNJRMFlw&oe=6655A69D" alt="Noticia 4">
+                    <p>#Noticias #Puno | Henry Ortiz, socio de la Asociación de Taxis y Expresos Señor de los Milagros N° 13, denunció públicamente al presidente de dicha asociación, Jesús Humpiri Choque, quien estaría privando a los socios por las diferentes sanciones que está aplicando.
+
+                        Explicó que, con la finalidad de excluir a varios socios activos, Jesús Humpiri realizó una convocatoria de reunión para el día jueves 9 de mayo, sin embargo, esta citación la realizó a través de una publicación en un diario regional, cuando lo propio debió ser por el grupo de WhatsApp en el que estaban.
+                        
+                        Detalló que, son 19 socios que están siendo perjudicados por la medida que se ha tomado en esa ultima reunión, donde se tenía de agenda la depuración de socios. “La convocatoria ha sido direccionada y personalizada por llamada a algunos socios y los que estamos en contra de su gestión nos ha excluido”, señaló.
+                        
+                        Así mismo, dijo que, al momento de solicitar una copia del acta, el presidente de la asociación no quiso recibir el documento, indicándoles que ya no son socios.
+                        
+                        Finalmente anunció que, procederán legalmente formalizando una denuncia penal, y también por estafa, debido a que tienen compañeros que han pagado una suma de dinero con la promesa de ser incluidos en la asociación, sin embargo, hasta el momento se les ha negado y ahora están siendo excluidos.
+                        ☝️😉 #IllaryInforma
+                        
+                        📌𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩 / 𝟵𝟴𝟲 𝟬𝟰𝟵 𝟵𝟬𝟬
+                        𝗝𝗿. 𝗧𝗮𝗰𝗻𝗮 𝟴𝟱𝟴 - 𝗙𝗿𝗲𝗻𝘁𝗲 𝗮 𝗹𝗮 𝗣𝗿𝗲𝗳𝗲𝗰𝘁𝘂𝗿𝗮 / 𝗖𝗼𝘀𝘁𝗮𝗱𝗼 𝗖𝗹𝗶𝗻𝗶𝗰𝗮 𝗞𝗮𝗹𝗮𝘀 - 𝗣𝘂𝗻𝗼.
+                        🤳𝗕𝘂𝘀𝗰𝗮𝗻𝗼𝘀 𝗲𝗻 𝗧𝗜𝗞𝗧𝗢𝗞 𝗰𝗼𝗺𝗼: 𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<div class="container">
+    <section id="deportes" class="card">
+        <h2>Deportes</h2>
+        <div class="content">
+            <div class="news">
+                <div class="news-item">
+                    <img src="https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/444146239_976909624436623_4165729969538899194_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFwNYIDe-KxDgzVLm8xvVJNWFWmWQtPux1YVaZZC0-7Hf818rtcr_rLXSKssLMS_IEs5b3SISNfLSeqzYhZjOQX&_nc_ohc=NgOmd2YIfQgQ7kNvgGRsqrF&_nc_ht=scontent.flim14-1.fna&oh=00_AYACMGJJpL9NXBiA9FhDXd6CgtxuIdkI6Yx5krNTjwFj9Q&oe=6655A089" alt="Deporte 1">
+                    <p>#Noticias #Deportes | Además, el empate de la ‘U’ dio opciones mínimas al cuadro de Melgar, que se sumará a la ola de partidos en simultáneo del próximo sábado 25 de mayo.
+
+                        Pero, ¿qué necesita cada uno para pelear por el Torneo Apertura 2024?
+                        Sporting Cristal (1° con 37, +23) necesita ganarle a Comerciantes Unidos y si puede, ganarle por un marcador abultado puesto que así complica más las opciones de Universitario (2° con 37 puntos, +21). Si empata, solo le conviene, si y solo si, la ‘U’ pierde contra Los Chankas.
+                        
+                        En tanto Universitario para ganar el Apertura, debe ganar a Los Chankas y preparse ára golear. Si Cristal gana su respectivo partido debido a la diferencia de goles, la ‘U’ debe anotar tres goles más que la diferencia de goles por la que se imponga Cristal. Es decir, si SC gana por un gol, la ‘U’ debe ganar por cuatro goles, si SC gana por dos, la ‘U’ debe imponerse por cinco tantos y así sucesivamente.
+                        En caso Sporting Cristal empate su partido, a Universitario le bastará el triunfo para llevarse el Apertura. En caso los rimenses pierdan ante Comerciantes, a la ‘U’ le bastará un punto para consagrarse.
+                        
+                        Melgar (3° con 35, +15) tiene más opciones matemáticas. Necesita derrotar a Deportivo Garcilaso y esperar las derrotas de Cristal y la ‘U’.
+                        
+                        Si se dan unos hipotéticos empates de los dos primeros de la tabla, Melgar necesitaría ganarle a su rival por diferencia de nueve goles.
+                        ☝️😉 #IllaryInforma
+                        
+                        📌𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩 / 𝟵𝟴𝟲 𝟬𝟰𝟵 𝟵𝟬𝟬
+                        𝗝𝗿. 𝗧𝗮𝗰𝗻𝗮 𝟴𝟱𝟴 - 𝗙𝗿𝗲𝗻𝘁𝗲 𝗮 𝗹𝗮 𝗣𝗿𝗲𝗳𝗲𝗰𝘁𝘂𝗿𝗮 / 𝗖𝗼𝘀𝘁𝗮𝗱𝗼 𝗖𝗹𝗶𝗻𝗶𝗰𝗮 𝗞𝗮𝗹𝗮𝘀 - 𝗣𝘂𝗻𝗼.
+                        🤳𝗕𝘂𝘀𝗰𝗮𝗻𝗼𝘀 𝗲𝗻 𝗧𝗜𝗞𝗧𝗢𝗞 𝗰𝗼𝗺𝗼: 𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩</p>
+                </div>
+                <div class="news-item">
+                    <img src="https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/444146239_976909624436623_4165729969538899194_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFwNYIDe-KxDgzVLm8xvVJNWFWmWQtPux1YVaZZC0-7Hf818rtcr_rLXSKssLMS_IEs5b3SISNfLSeqzYhZjOQX&_nc_ohc=NgOmd2YIfQgQ7kNvgGRsqrF&_nc_ht=scontent.flim14-1.fna&oh=00_AYACMGJJpL9NXBiA9FhDXd6CgtxuIdkI6Yx5krNTjwFj9Q&oe=6655A089" alt="Deporte 2">
+                    <p>#Noticias #Deportes | Además, el empate de la ‘U’ dio opciones mínimas al cuadro de Melgar, que se sumará a la ola de partidos en simultáneo del próximo sábado 25 de mayo.
+
+                        Pero, ¿qué necesita cada uno para pelear por el Torneo Apertura 2024?
+                        Sporting Cristal (1° con 37, +23) necesita ganarle a Comerciantes Unidos y si puede, ganarle por un marcador abultado puesto que así complica más las opciones de Universitario (2° con 37 puntos, +21). Si empata, solo le conviene, si y solo si, la ‘U’ pierde contra Los Chankas.
+                        
+                        En tanto Universitario para ganar el Apertura, debe ganar a Los Chankas y preparse ára golear. Si Cristal gana su respectivo partido debido a la diferencia de goles, la ‘U’ debe anotar tres goles más que la diferencia de goles por la que se imponga Cristal. Es decir, si SC gana por un gol, la ‘U’ debe ganar por cuatro goles, si SC gana por dos, la ‘U’ debe imponerse por cinco tantos y así sucesivamente.
+                        En caso Sporting Cristal empate su partido, a Universitario le bastará el triunfo para llevarse el Apertura. En caso los rimenses pierdan ante Comerciantes, a la ‘U’ le bastará un punto para consagrarse.
+                        
+                        Melgar (3° con 35, +15) tiene más opciones matemáticas. Necesita derrotar a Deportivo Garcilaso y esperar las derrotas de Cristal y la ‘U’.
+                        
+                        Si se dan unos hipotéticos empates de los dos primeros de la tabla, Melgar necesitaría ganarle a su rival por diferencia de nueve goles.
+                        ☝️😉 #IllaryInforma
+                        
+                        📌𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩 / 𝟵𝟴𝟲 𝟬𝟰𝟵 𝟵𝟬𝟬
+                        𝗝𝗿. 𝗧𝗮𝗰𝗻𝗮 𝟴𝟱𝟴 - 𝗙𝗿𝗲𝗻𝘁𝗲 𝗮 𝗹𝗮 𝗣𝗿𝗲𝗳𝗲𝗰𝘁𝘂𝗿𝗮 / 𝗖𝗼𝘀𝘁𝗮𝗱𝗼 𝗖𝗹𝗶𝗻𝗶𝗰𝗮 𝗞𝗮𝗹𝗮𝘀 - 𝗣𝘂𝗻𝗼.
+                        🤳𝗕𝘂𝘀𝗰𝗮𝗻𝗼𝘀 𝗲𝗻 𝗧𝗜𝗞𝗧𝗢𝗞 𝗰𝗼𝗺𝗼: 𝗜𝗟𝗟𝗔𝗥𝗬 𝗧</p>
+                </div>
+                <div class="news-item">
+                    <img src="https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/444146239_976909624436623_4165729969538899194_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFwNYIDe-KxDgzVLm8xvVJNWFWmWQtPux1YVaZZC0-7Hf818rtcr_rLXSKssLMS_IEs5b3SISNfLSeqzYhZjOQX&_nc_ohc=NgOmd2YIfQgQ7kNvgGRsqrF&_nc_ht=scontent.flim14-1.fna&oh=00_AYACMGJJpL9NXBiA9FhDXd6CgtxuIdkI6Yx5krNTjwFj9Q&oe=6655A089" alt="Deporte 3">
+                    <p>#Noticias #Deportes | Además, el empate de la ‘U’ dio opciones mínimas al cuadro de Melgar, que se sumará a la ola de partidos en simultáneo del próximo sábado 25 de mayo.
+
+                        Pero, ¿qué necesita cada uno para pelear por el Torneo Apertura 2024?
+                        Sporting Cristal (1° con 37, +23) necesita ganarle a Comerciantes Unidos y si puede, ganarle por un marcador abultado puesto que así complica más las opciones de Universitario (2° con 37 puntos, +21). Si empata, solo le conviene, si y solo si, la ‘U’ pierde contra Los Chankas.
+                        
+                        En tanto Universitario para ganar el Apertura, debe ganar a Los Chankas y preparse ára golear. Si Cristal gana su respectivo partido debido a la diferencia de goles, la ‘U’ debe anotar tres goles más que la diferencia de goles por la que se imponga Cristal. Es decir, si SC gana por un gol, la ‘U’ debe ganar por cuatro goles, si SC gana por dos, la ‘U’ debe imponerse por cinco tantos y así sucesivamente.
+                        En caso Sporting Cristal empate su partido, a Universitario le bastará el triunfo para llevarse el Apertura. En caso los rimenses pierdan ante Comerciantes, a la ‘U’ le bastará un punto para consagrarse.
+                        
+                        Melgar (3° con 35, +15) tiene más opciones matemáticas. Necesita derrotar a Deportivo Garcilaso y esperar las derrotas de Cristal y la ‘U’.
+                        
+                        Si se dan unos hipotéticos empates de los dos primeros de la tabla, Melgar necesitaría ganarle a su rival por diferencia de nueve goles.
+                        ☝️😉 #IllaryInforma
+                        
+                        📌𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩 / 𝟵𝟴𝟲 𝟬𝟰𝟵 𝟵𝟬𝟬
+                        𝗝𝗿. 𝗧𝗮𝗰𝗻𝗮 𝟴𝟱𝟴 - 𝗙𝗿𝗲𝗻𝘁𝗲 𝗮 𝗹𝗮 𝗣𝗿𝗲𝗳𝗲𝗰𝘁𝘂𝗿𝗮 / 𝗖𝗼𝘀𝘁𝗮𝗱𝗼 𝗖𝗹𝗶𝗻𝗶𝗰𝗮 𝗞𝗮𝗹𝗮𝘀 - 𝗣𝘂𝗻𝗼.
+                        🤳𝗕𝘂𝘀𝗰𝗮𝗻𝗼𝘀 𝗲𝗻 𝗧𝗜𝗞𝗧𝗢𝗞 𝗰𝗼𝗺𝗼: 𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩</p>
+                </div>
+                <div class="news-item">
+                    <img src="https://scontent.flim14-1.fna.fbcdn.net/v/t39.30808-6/444146239_976909624436623_4165729969538899194_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeFwNYIDe-KxDgzVLm8xvVJNWFWmWQtPux1YVaZZC0-7Hf818rtcr_rLXSKssLMS_IEs5b3SISNfLSeqzYhZjOQX&_nc_ohc=NgOmd2YIfQgQ7kNvgGRsqrF&_nc_ht=scontent.flim14-1.fna&oh=00_AYACMGJJpL9NXBiA9FhDXd6CgtxuIdkI6Yx5krNTjwFj9Q&oe=6655A089" alt="Deporte 4">
+                    <p>#Noticias #Deportes | Además, el empate de la ‘U’ dio opciones mínimas al cuadro de Melgar, que se sumará a la ola de partidos en simultáneo del próximo sábado 25 de mayo.
+
+                        Pero, ¿qué necesita cada uno para pelear por el Torneo Apertura 2024?
+                        Sporting Cristal (1° con 37, +23) necesita ganarle a Comerciantes Unidos y si puede, ganarle por un marcador abultado puesto que así complica más las opciones de Universitario (2° con 37 puntos, +21). Si empata, solo le conviene, si y solo si, la ‘U’ pierde contra Los Chankas.
+                        
+                        En tanto Universitario para ganar el Apertura, debe ganar a Los Chankas y preparse ára golear. Si Cristal gana su respectivo partido debido a la diferencia de goles, la ‘U’ debe anotar tres goles más que la diferencia de goles por la que se imponga Cristal. Es decir, si SC gana por un gol, la ‘U’ debe ganar por cuatro goles, si SC gana por dos, la ‘U’ debe imponerse por cinco tantos y así sucesivamente.
+                        En caso Sporting Cristal empate su partido, a Universitario le bastará el triunfo para llevarse el Apertura. En caso los rimenses pierdan ante Comerciantes, a la ‘U’ le bastará un punto para consagrarse.
+                        
+                        Melgar (3° con 35, +15) tiene más opciones matemáticas. Necesita derrotar a Deportivo Garcilaso y esperar las derrotas de Cristal y la ‘U’.
+                        
+                        Si se dan unos hipotéticos empates de los dos primeros de la tabla, Melgar necesitaría ganarle a su rival por diferencia de nueve goles.
+                        ☝️😉 #IllaryInforma
+                        
+                        📌𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩 / 𝟵𝟴𝟲 𝟬𝟰𝟵 𝟵𝟬𝟬
+                        𝗝𝗿. 𝗧𝗮𝗰𝗻𝗮 𝟴𝟱𝟴 - 𝗙𝗿𝗲𝗻𝘁𝗲 𝗮 𝗹𝗮 𝗣𝗿𝗲𝗳𝗲𝗰𝘁𝘂𝗿𝗮 / 𝗖𝗼𝘀𝘁𝗮𝗱𝗼 𝗖𝗹𝗶𝗻𝗶𝗰𝗮 𝗞𝗮𝗹𝗮𝘀 - 𝗣𝘂𝗻𝗼.
+                        🤳𝗕𝘂𝘀𝗰𝗮𝗻𝗼𝘀 𝗲𝗻 𝗧𝗜𝗞𝗧𝗢𝗞 𝗰𝗼𝗺𝗼: 𝗜𝗟𝗟𝗔𝗥𝗬 𝗧𝗩</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="farandulas" class="card">
+        <h2>Farándulas</h2>
+        <div class="content">
+            <div class="news">
+                <div class="news-item">
+                    <img src="FARANDULA1.JPG" alt="Farándula 1">
+                    <p>Descripción de la Farándula 1</p>
+                </div>
+                <div class="news-item">
+                    <img src="FARANDULA2.JPG" alt="Farándula 2">
+                    <p>Descripción de la Farándula 2</p>
+                </div>
+                <div class="news-item">
+                    <img src="FARANDULA3.JPG" alt="Farándula 3">
+                    <p>Descripción de la Farándula 3</p>
+                </div>
+                <div class="news-item">
+                    <img src="FARANDULA4.JPG" alt="Farándula 4">
+                    <p>Descripción de la Farándula 4</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<script defer src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
+</body>
+</html>
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+archivo CSS
+/* Estilos para los recuadros de las secciones */
+.card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  font-size: 24px;
+  color: #333;
+}
+
+.card .content {
+  margin-top: 20px; /* Añadir un poco de espacio por encima de las noticias */
+}
+
+.card .content .image {
+  margin-bottom: 10px;
+}
+
+.card img {
+  max-width: calc(100% - 40px); /* Tamaño máximo de la imagen */
+  max-height: 300px; /* Altura máxima de la imagen */
+  border-radius: 5px;
+}
+
+.card .content .description p {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+  text-decoration: none; /* Eliminar subrayado */
+  cursor: default; /* Cambiar cursor a predeterminado para indicar que no es un enlace */
+}
+
+/* Ajustes para las noticias */
+.news {
+  display: flex;
+  justify-content: space-between;
+}
+
+.news-item {
+  width: calc(25% - 20px); /* 25% del ancho del contenedor con margen */
+  margin: 0 10px; /* Margen entre las noticias */
+  text-align: center; /* Centrar contenido */
+}
+
+.news-item img {
+  width: 100%; /* Las imágenes ocupan todo el ancho del contenedor */
+  border-radius: 5px; /* Bordes redondeados para las imágenes */
+}
+
+.news-item p {
+  margin-top: 10px; /* Margen superior para separar la descripción de la imagen */
+  font-size: 14px; /* Tamaño de fuente más pequeño para la descripción */
+}
+
+/* Ajustes para las secciones de Deportes y Farándulas */
+#deportes .news-item,
+#farandulas .news-item {
+    width: calc(25% - 20px); /* 25% del ancho del contenedor con margen */
+    margin: 0 10px; /* Margen entre las noticias */
+    text-align: center; /* Centrar contenido */
+}
+
+#deportes .news-item img,
+#farandulas .news-item img {
+    width: 100%; /* Las imágenes ocupan todo el ancho del contenedor */
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+}
+
+#deportes .news-item p,
+#farandulas .news-item p {
+    margin-top: 10px; /* Margen superior para separar la descripción de la imagen */
+    font-size: 14px; /* Tamaño de fuente más pequeño para la descripción */
+}
+
+
+/* Estilos para el header y la navegación */
+header {
+  background: rgba(0, 0, 0, 0.692);
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+}
+
+nav {
+  float: left;
+}
+
+nav ul {
+  list-style: none;
+  overflow: hidden; 
+}
+
+nav ul li {
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;;
+  font-size: 20px;
+}
+
+nav ul li a {
+  display: block; 
+  padding: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li:hover {
+  background: #eca023;
+}
+
+/* Estilos para las redes sociales */
+.redes {
+  display: inline-flex;
+  list-style: none;
+  height: 100%;
+  width: 100%;
+  padding-top: 250px;
+  font-family: "Poppins", sans-serif;
+  justify-content: center;
+}
+
+.redes .icon {
+  position: relative;
+  background: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.redes .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background: #fff;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.redes .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background: #fff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.redes .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.redes .icon:hover span,
+.redes .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.redes .facebook:hover,
+.redes .facebook:hover .tooltip,
+.redes .facebook:hover .tooltip::before {
+  background: #1877F2;
+  color: #fff;
+}
+
+.redes .twitter:hover,
+.redes .twitter:hover .tooltip,
+.redes .twitter:hover .tooltip::before {
+  background: #1DA1F2;
+  color: #fff;
+}
+
+.redes .instagram:hover,
+.redes .instagram:hover .tooltip,
+.redes .instagram:hover .tooltip::before {
+  background: #E4405F;
+  color: #fff;
+}
+.redes .tiktok:hover,
+.redes .tiktok:hover .tooltip,
+.redes .tiktok:hover .tooltip::before {
+  background: #2c3236;
+  color: #fff;
+}
+
+.redes .whatsapp:hover,
+.redes .whatsapp:hover .tooltip,
+.redes .whatsapp:hover .tooltip::before {
+  background: #02bd56;
+  color: #fff;
+}
+
+.redes .youtube:hover,
+.redes .youtube:hover .tooltip,
+.redes .youtube:hover .tooltip::before {
+  background: #f34646;
+  color: #fff;
+}
